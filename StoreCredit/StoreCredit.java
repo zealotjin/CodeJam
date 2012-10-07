@@ -2,6 +2,20 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 
+/**
+The basic algorithm I used was that:
+I first took in the input from the file called ‘input.txt’ and then seperated all the values accordingly to a seperate ArrayList.
+Then, I noticed that for each case, there are three lines respectively that give the input: 
+1. gives the total credit you have, 2. gives the number of items in the list and 3. gives the values of the items in the store.
+Thus I looped through to insert the values into arrays with the an index for each case. (Ex. for case one, all the data for this will be stored in the three arrays with the index of 0) Next, I assumed that because there are no negative numbers and the sum is to be the credit, I can then assume that one value will be smaller and one value will be bigger than the mid (= credit/2). This way I can keep track of which one is the smaller value so it eases the part when I need to print them in order. Time-wise, this does have a 0(n^2) time, however, I believe that for the large inputs, it will be much faster than blindly going through two arrays and comparing all the values.
+I manually created a ‘Tuples’ class that just simply takes in two objects and groups them into two.
+This is because I wanted to store the first object to be the index of the value in the list, and the second to be its original value (lookup Dictionary for reference) and thus when I made the ‘lower’ and ‘higher’, I made them to accept Tuples that contain these information. 
+Then depending on which array was bigger, I would go through two arrays and see if their sum would equal the credit.
+
+Possible implementations I thought of to improve may be to implement the binary tree with the root as the mid value of the list. (Not sure, but maybe possible to shorten the time). 
+
+*/
+
 public class StoreCredit{
 
 	public static void main(String[] args){
